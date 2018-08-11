@@ -46,6 +46,11 @@ var calc = {
         }
         // also update operand value 1 = display value
         this.operand1.value = display.textContent;
+
+        if(args == 0){
+            this.calculate();
+            Array.from(keys.children).forEach(k => k.classList.remove('is-depressed'));
+        }
     },
 
     backspaceAction: function(){
@@ -188,7 +193,7 @@ var calc = {
     },
 
     highlightKey: function(key, doHighlight){
-        Array.from(keys).forEach(k => k.classList.remove('is-depressed'));
+        Array.from(keys.children).forEach(k => k.classList.remove('is-depressed'));
         if(doHighlight){
             key.classList.add('is-depressed');
         }
