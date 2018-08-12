@@ -184,6 +184,7 @@ var calc = {
         this.operand2.value= '';
         this.operand2.touched= false;
         this.operationUrl ='';
+        Array.from(keys.children).forEach(k => k.classList.remove('is-depressed'));
     },
 
     setDisplayValue: function(value){
